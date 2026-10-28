@@ -5,4 +5,4 @@ if errorlevel 1 (
   echo Node.js is not installed or is not available on PATH.
   exit /b 1
 )
-npm.cmd run dev -- --hostname 127.0.0.1
+npm.cmd run dev

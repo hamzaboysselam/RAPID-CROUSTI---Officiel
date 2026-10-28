@@ -8,7 +8,7 @@ Install Node.js 24 LTS and npm. Open this folder in VS Code, then run in PowerSh
 
 ```powershell
 npm.cmd ci
-npm.cmd run dev -- --hostname 127.0.0.1
+npm.cmd run dev
 ```
 
 Open <http://localhost:3000>. The development server binds to loopback, so it is not exposed to the local network. Stop it with `Ctrl+C` in the terminal. `start-local.bat` runs the same server command without PowerShell script-policy changes.
@@ -56,3 +56,7 @@ Automated tests cover backup validation, seeded employees, schedule defaults and
 - `src/app/api/health/route.ts`: process health endpoint.
 
 The unrelated `Projet_Examen` directory contains a separate festival-management project and is not part of this Next.js app.
+
+## Vercel deployment
+
+The Next.js application is at the repository root, with routes under src/app. Set Vercel Root Directory to the repository root so the build runs from the directory containing package.json, next.config.ts, and src/app. The route group (dashboard) is omitted from public URLs; src/app/(dashboard)/planning/page.tsx serves /planning.
